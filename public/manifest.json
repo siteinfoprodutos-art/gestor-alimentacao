@@ -1,0 +1,59 @@
+{
+  "name": "AL Studio Gestão",
+  "short_name": "AL Gestão",
+  "description": "Sistema de gestão comercial completo, offline-first e profissional para pizzarias e comércios locais.",
+  "id": "al-studio-gestao-pwa",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "window-controls-overlay"],
+  "orientation": "any",
+  "background_color": "#0c0a09",
+  "theme_color": "#dc2626",
+  "categories": ["business", "finance", "food", "productivity"],
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/svg+xml"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Novo Pedido",
+      "short_name": "Pedido",
+      "description": "Lançar um novo pedido no PDV",
+      "url": "/?action=new_order",
+      "icons": [{ "src": "/favicon.svg", "sizes": "64x64" }]
+    },
+    {
+      "name": "Estoque",
+      "short_name": "Estoque",
+      "description": "Ver níveis de estoque e insumos",
+      "url": "/?tab=inventory",
+      "icons": [{ "src": "/favicon.svg", "sizes": "64x64" }]
+    },
+    {
+      "name": "Financeiro",
+      "short_name": "Financeiro",
+      "description": "Ver fluxo de caixa e relatórios",
+      "url": "/?tab=finances",
+      "icons": [{ "src": "/favicon.svg", "sizes": "64x64" }]
+    }
+  ]
+}

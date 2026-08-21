@@ -1,0 +1,6 @@
+{
+  "name": "AL Studio Gestão — Pizzaria",
+  "description": "Sistema simples, moderno e profissional para gerenciamento interno de pizzaria (pedidos, produtos, clientes, estoque e financeiro).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

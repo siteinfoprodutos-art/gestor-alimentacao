@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --color-stone-950: #0c0a09;
+    --color-stone-900: #1c1917;
+    --color-stone-800: #292524;
+    --color-stone-700: #44403c;
+    --color-stone-600: #57534e;
+    --color-stone-500: #78716c;
+    --color-stone-400: #a8a29e;
+    --color-stone-300: #d6d3d1;
+    --color-stone-200: #e7e5e4;
+    --color-stone-100: #f5f5f4;
+    --color-stone-50: #fafaf9;
+  }
+
+  html.dark, :root.dark {
+    color-scheme: dark;
+    --color-stone-950: #0c0a09;
+    --color-stone-900: #1c1917;
+    --color-stone-800: #292524;
+    --color-stone-700: #44403c;
+    --color-stone-600: #57534e;
+    --color-stone-500: #78716c;
+    --color-stone-400: #a8a29e;
+    --color-stone-300: #d6d3d1;
+    --color-stone-200: #e7e5e4;
+    --color-stone-100: #f5f5f4;
+    --color-stone-50: #fafaf9;
+  }
+
+  html.light, :root.light {
+    color-scheme: light;
+    /* Clean, high-contrast warm stone light theme */
+    --color-stone-950: #f5f4f0; /* Page main background (soft clean warm off-white) */
+    --color-stone-900: #ffffff; /* Main cards, panels, modals, containers */
+    --color-stone-800: #e7e5e0; /* Subcards, secondary backgrounds, borders */
+    --color-stone-700: #d6d3cd; /* Interactive borders, dividing lines */
+    --color-stone-600: #8c857b; /* Secondary icons, subtle markers */
+    --color-stone-500: #736d64; /* Tertiary/subdued text */
+    --color-stone-400: #544e45; /* Secondary text */
+    --color-stone-300: #2d2822; /* Body text (high legibility) */
+    --color-stone-200: #1a1713; /* Bold emphasis */
+    --color-stone-100: #0d0c0a; /* Headings */
+    --color-stone-50: #000000;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Light Mode specific refinements */
+html.light body {
+  background-color: #f5f4f0;
+  color: #2d2822;
+}
+
+html.light header {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-bottom-color: #e7e5e0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+html.light aside {
+  background-color: #ffffff !important;
+  border-right-color: #e7e5e0 !important;
+}
+
+html.light nav {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-top-color: #e7e5e0 !important;
+}
+
+/* Light Mode cards shadow enhancement */
+html.light .bg-stone-900 {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Light mode text headings where text-white is used without a colored background */
+html.light .text-white:not([class*="bg-red-"]):not([class*="bg-emerald-"]):not([class*="bg-green-"]):not([class*="bg-blue-"]):not([class*="bg-amber-"]):not([class*="bg-indigo-"]):not([class*="bg-purple-"]):not([class*="bg-cyan-"]):not([class*="bg-violet-"]):not([class*="bg-rose-"]):not(button[class*="bg-red-"]):not(button[class*="bg-emerald-"]):not(button[class*="bg-green-"]):not(button[class*="bg-blue-"]):not(span[class*="bg-red-"]):not(span[class*="bg-emerald-"]):not(span[class*="bg-green-"]):not(span[class*="bg-blue-"]):not(span[class*="bg-amber-"]) {
+  color: #0d0c0a;
+}
+
+/* Light mode inputs and form controls */
+html.light input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="range"]),
+html.light select,
+html.light textarea {
+  color: #1a1713 !important;
+  background-color: #faf9f6 !important;
+  border-color: #d6d3cd !important;
+}
+
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  background-color: #ffffff !important;
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 1px #dc2626;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #8c857b !important;
+}
+
+/* Modals backdrop in light mode */
+html.light .bg-stone-950\/80,
+html.light .bg-stone-950\/90,
+html.light .bg-black\/60,
+html.light .bg-black\/70,
+html.light .bg-black\/80 {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+}
+
+/* Light mode modal cards */
+html.light .bg-stone-900.border-stone-800 {
+  border-color: #e7e5e0 !important;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-receipt, #printable-receipt * {
+    visibility: visible;
+  }
+  #printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    margin: 0;
+    padding: 10px;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.4);
+}

@@ -1,0 +1,87 @@
+import { BusinessSegmentConfig } from '../types';
+
+export const mercadinhoSegment: BusinessSegmentConfig = {
+  id: 'mercadinho',
+  name: 'Mercadinho & Mercearia',
+  emoji: '🛒',
+  tagline: 'Gestão de Mercadinhos de Bairro, Mercearias & Minimercados',
+  description: 'Controle de código de barras (SKU), categorias de gôndola, estoque de produtos embalados, margem de revenda e caixa rápido.',
+  primaryColor: '#059669', // Verde esmeralda varejo
+  secondaryColor: '#10b981',
+  defaultCategories: [
+    'Alimentos Básicos & Mercearia',
+    'Hortifrúti & Frutas',
+    'Frios, Embutidos & Laticínios',
+    'Higiene Pessoal & Perfumaria',
+    'Limpeza & Utilidades Domésticas',
+    'Bebidas, Refrigerantes & Sucos',
+    'Biscoitos, Doces & Bomboniere',
+  ],
+  defaultUnits: ['un', 'kg', 'pct', 'cx', 'L', 'g'],
+  terminology: {
+    productSingular: 'Mercadoria / Produto',
+    productPlural: 'Mercadorias & Produtos',
+    newProductLabel: 'Cadastrar Mercadoria',
+    inventoryLabel: 'Estoque de Gôndola & Depósito',
+    recipeLabel: 'Kits Promocionais',
+    salesLabel: 'Vendas de Frente de Caixa',
+    customerLabel: 'Clientes / Fiado',
+    categoryLabel: 'Setores do Mercado',
+  },
+  features: {
+    hasSizes: false,
+    hasCrustsOrBorders: false,
+    hasFlavors: false,
+    hasAddons: false,
+    hasCombos: true, // Cestas básicas / Kits
+    hasRecipeCostCMV: false, // Controle puramente comercial de revenda
+    hasInventory: true,
+    hasDelivery: true,
+    hasCodeSKU: true,
+    hasPreparationTime: false,
+  },
+  suggestedProducts: [
+    {
+      name: 'Arroz Tipo 1 Camil 5kg',
+      category: 'Alimentos Básicos & Mercearia',
+      price: 29.9,
+      cost: 23.5,
+      code: '7896006711105',
+      unit: 'pct',
+      description: 'Pacote 5kg grãos nobres selecionados.',
+    },
+    {
+      name: 'Óleo de Soja Liza Pet 900ml',
+      category: 'Alimentos Básicos & Mercearia',
+      price: 7.9,
+      cost: 5.8,
+      code: '7891000100103',
+      unit: 'un',
+      description: 'Óleo 100% vegetal refinado.',
+    },
+    {
+      name: 'Sabão em Pó OMO Lavagem Perfeita 800g',
+      category: 'Limpeza & Utilidades Domésticas',
+      price: 14.5,
+      cost: 10.2,
+      code: '7891038000123',
+      unit: 'cx',
+      description: 'Detergente em pó ação profunda.',
+    },
+    {
+      name: 'Banana Prata Climatizada (kg)',
+      category: 'Hortifrúti & Frutas',
+      price: 6.99,
+      cost: 3.8,
+      unit: 'kg',
+      description: 'Frutas frescas selecionadas por quilo.',
+    },
+  ],
+  suggestedInventory: [
+    { name: 'Arroz Camil 5kg (Fardo c/ 6)', category: 'Mercearia', unit: 'cx', currentQuantity: 12, minQuantity: 4, cost: 141.0 },
+    { name: 'Feijão Carioca Kicaldo 1kg (Fardo c/ 10)', category: 'Mercearia', unit: 'cx', currentQuantity: 8, minQuantity: 3, cost: 72.0 },
+    { name: 'Açúcar Refinado União 1kg (Fardo c/ 10)', category: 'Mercearia', unit: 'cx', currentQuantity: 10, minQuantity: 3, cost: 42.0 },
+    { name: 'Leite Integral Tetra Pak 1L (Caixa c/ 12)', category: 'Laticínios', unit: 'cx', currentQuantity: 15, minQuantity: 5, cost: 54.0 },
+    { name: 'Sacolas Plásticas Reforçadas (Milheiro)', category: 'Embalagens', unit: 'cx', currentQuantity: 4, minQuantity: 1, cost: 48.0 },
+  ],
+};
