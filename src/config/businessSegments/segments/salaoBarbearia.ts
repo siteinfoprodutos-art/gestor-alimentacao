@@ -22,7 +22,7 @@ export const salaoBarbeariaSegment: BusinessSegmentConfig = {
     productSingular: 'Serviço / Procedimento',
     productPlural: 'Serviços & Procedimentos',
     newProductLabel: 'Novo Serviço / Produto',
-    inventoryLabel: 'Estoque de Cosméticos & Insumos',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Consumo de Insumos por Procedimento',
     salesLabel: 'Atendimentos & Comandas',
     customerLabel: 'Clientes & Pacientes',

@@ -22,7 +22,7 @@ export const cafeteriaSegment: BusinessSegmentConfig = {
     productSingular: 'Café / Item',
     productPlural: 'Cafés & Gastronomia',
     newProductLabel: 'Novo Café / Item',
-    inventoryLabel: 'Estoque de Grãos & Laticínios',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Ficha da Bebida / Extração',
     salesLabel: 'Vendas & Comandas',
     customerLabel: 'Clientes & Coffee Lovers',

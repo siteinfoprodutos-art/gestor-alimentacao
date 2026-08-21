@@ -21,7 +21,7 @@ export const restauranteSegment: BusinessSegmentConfig = {
     productSingular: 'Prato / Refeição',
     productPlural: 'Pratos & Refeições',
     newProductLabel: 'Novo Prato / Marmitex',
-    inventoryLabel: 'Estoque de Carnes & Hortifrúti',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Ficha Técnica do Prato',
     salesLabel: 'Vendas & Comandas',
     customerLabel: 'Clientes & Comensais',

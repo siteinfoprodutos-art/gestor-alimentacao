@@ -21,7 +21,7 @@ export const lanchoneteSegment: BusinessSegmentConfig = {
     productSingular: 'Lanche / Salgado',
     productPlural: 'Lanches & Salgados',
     newProductLabel: 'Novo Lanche / Salgado',
-    inventoryLabel: 'Estoque de Frios & Ingredientes',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Ficha Técnica do Lanche',
     salesLabel: 'Vendas de Balcão & Delivery',
     customerLabel: 'Clientes',

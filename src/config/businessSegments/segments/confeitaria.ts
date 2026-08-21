@@ -22,7 +22,7 @@ export const confeitariaSegment: BusinessSegmentConfig = {
     productSingular: 'Bolo / Doce',
     productPlural: 'Bolos & Doces',
     newProductLabel: 'Novo Bolo / Doce',
-    inventoryLabel: 'Estoque de Confeitaria & Embalagens',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Ficha Técnica do Doce / Bolo',
     salesLabel: 'Vendas & Encomendas',
     customerLabel: 'Clientes & Noivas',

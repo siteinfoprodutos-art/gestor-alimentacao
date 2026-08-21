@@ -22,7 +22,7 @@ export const pizzariaSegment: BusinessSegmentConfig = {
     productSingular: 'Pizza / Item',
     productPlural: 'Pizzas & Itens',
     newProductLabel: 'Nova Pizza / Item',
-    inventoryLabel: 'Estoque de Insumos',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Ficha Técnica da Pizza',
     salesLabel: 'Vendas & Entregas',
     customerLabel: 'Clientes',

@@ -190,56 +190,49 @@ export async function clearStore(storeName: keyof DBStores): Promise<void> {
 
 // Initial Seeding & Upgrade
 export async function initializeDatabase(): Promise<void> {
-  const settings = await getItemFromStore<Settings>('settings', 'settings');
+  let settings = await getItemFromStore<Settings>('settings', 'settings');
   if (!settings) {
-    // Seed initial demo data
-    await putItemToStore<Settings>('settings', INITIAL_SETTINGS);
+    // Seed initial clean settings without fictitious demo data
+    settings = { ...INITIAL_SETTINGS, isDemoMode: false };
+    await putItemToStore<Settings>('settings', settings);
 
     for (const cat of DEMO_CATEGORIES) {
       await putItemToStore('categories', cat);
     }
-    for (const prod of DEMO_PRODUCTS) {
-      await putItemToStore('products', prod);
-    }
-    for (const add of DEMO_ADDONS) {
-      await putItemToStore('addons', add);
-    }
-    for (const cmb of DEMO_COMBOS) {
-      await putItemToStore('combos', cmb);
-    }
-    for (const cust of DEMO_CUSTOMERS) {
-      await putItemToStore('customers', cust);
-    }
-    for (const inv of DEMO_INVENTORY) {
-      await putItemToStore('inventory', inv);
-    }
-    for (const ord of DEMO_ORDERS) {
-      await putItemToStore('orders', ord);
-    }
-    for (const tx of DEMO_TRANSACTIONS) {
-      await putItemToStore('transactions', tx);
-    }
   } else {
-    // If upgrading from v1, ensure categories and addons are seeded if empty
+    // Ensure categories are seeded if empty
     const existingCats = await getAllFromStore<Category>('categories');
     if (existingCats.length === 0) {
       for (const cat of DEMO_CATEGORIES) {
         await putItemToStore('categories', cat);
       }
     }
+  }
 
-    const existingAddons = await getAllFromStore<AddOn>('addons');
-    if (existingAddons.length === 0) {
-      for (const add of DEMO_ADDONS) {
-        await putItemToStore('addons', add);
+  // Purge any fictitious demo items (isDemo: true) from the database
+  const storesToClean: (keyof DBStores)[] = [
+    'products',
+    'addons',
+    'combos',
+    'customers',
+    'inventory',
+    'orders',
+    'transactions',
+  ];
+
+  for (const storeName of storesToClean) {
+    const items = await getAllFromStore<any>(storeName);
+    const demoItems = items.filter((item) => item && item.isDemo === true);
+    for (const demoItem of demoItems) {
+      if (demoItem.id) {
+        await deleteItemFromStore(storeName, demoItem.id);
       }
     }
+  }
 
-    const existingCombos = await getAllFromStore<Combo>('combos');
-    if (existingCombos.length === 0) {
-      for (const cmb of DEMO_COMBOS) {
-        await putItemToStore('combos', cmb);
-      }
-    }
+  // Ensure isDemoMode flag is set to false
+  if (settings.isDemoMode) {
+    settings.isDemoMode = false;
+    await putItemToStore<Settings>('settings', settings);
   }
 }

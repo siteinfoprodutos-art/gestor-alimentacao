@@ -22,7 +22,7 @@ export const mercadinhoSegment: BusinessSegmentConfig = {
     productSingular: 'Mercadoria / Produto',
     productPlural: 'Mercadorias & Produtos',
     newProductLabel: 'Cadastrar Mercadoria',
-    inventoryLabel: 'Estoque de Gôndola & Depósito',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Kits Promocionais',
     salesLabel: 'Vendas de Frente de Caixa',
     customerLabel: 'Clientes / Fiado',

@@ -28,7 +28,7 @@ export const INITIAL_SETTINGS: Settings = {
   secondaryColor: '#fca5a5',
   currency: 'R$',
   defaultDeliveryFee: 7.0,
-  isDemoMode: true,
+  isDemoMode: false,
   setupCompleted: false,
   createdAt: new Date().toISOString(),
   updatedAt: new Date().toISOString(),

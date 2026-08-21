@@ -1,5 +1,5 @@
 import React from 'react';
-import { Moon, Store, Sun, Sparkles, Download, FlaskConical, WifiOff } from 'lucide-react';
+import { Moon, Store, Sun, Download, WifiOff } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { usePWA } from '../../context/PWAContext';
 
@@ -9,14 +9,12 @@ export const Header: React.FC = () => {
     theme,
     toggleTheme,
     setActiveTab,
-    setIsSetupWizardOpen,
   } = useApp();
 
   const {
     isInstalled,
     isOnline,
     setIsInstallModalOpen,
-    setIsDiagnosticsModalOpen,
   } = usePWA();
 
   return (
@@ -95,28 +93,6 @@ export const Header: React.FC = () => {
               <span className="hidden sm:inline">Instalar App</span>
             </button>
           )}
-
-          {/* Setup Wizard Button */}
-          <button
-            id="header-setup-wizard-btn"
-            onClick={() => setIsSetupWizardOpen(true)}
-            title="Assistente de Configuração Inicial (Primeiro Acesso / Demonstração)"
-            className="p-2 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-red-400 transition-colors border border-stone-700 cursor-pointer"
-            aria-label="Assistente de Configuração Inicial"
-          >
-            <Sparkles className="w-4 h-4 text-red-400" />
-          </button>
-
-          {/* PWA Test Suite / Diagnostics */}
-          <button
-            id="header-pwa-diagnostics-btn"
-            onClick={() => setIsDiagnosticsModalOpen(true)}
-            title="Testes PWA: Instalação, Offline, Atualização e IndexedDB"
-            className="p-2 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white transition-colors border border-stone-700 cursor-pointer"
-            aria-label="Central de Testes PWA"
-          >
-            <FlaskConical className="w-4 h-4 text-emerald-400" />
-          </button>
 
           {/* Theme Switcher */}
           <button

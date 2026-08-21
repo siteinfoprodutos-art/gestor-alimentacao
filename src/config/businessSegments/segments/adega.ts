@@ -23,7 +23,7 @@ export const adegaSegment: BusinessSegmentConfig = {
     productSingular: 'Bebida / Produto',
     productPlural: 'Bebidas & Produtos',
     newProductLabel: 'Nova Bebida / Item',
-    inventoryLabel: 'Estoque de Fardos & Bebidas',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Composição de Combos & Kits',
     salesLabel: 'Vendas de Balcão & Disk Bebidas',
     customerLabel: 'Clientes',

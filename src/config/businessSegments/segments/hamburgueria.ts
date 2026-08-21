@@ -22,7 +22,7 @@ export const hamburgueriaSegment: BusinessSegmentConfig = {
     productSingular: 'Burger / Prato',
     productPlural: 'Burgers & Porções',
     newProductLabel: 'Novo Burger / Lanche',
-    inventoryLabel: 'Estoque de Carnes & Pães',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Ficha Técnica do Burger',
     salesLabel: 'Vendas & Pedidos',
     customerLabel: 'Clientes',

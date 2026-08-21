@@ -16,8 +16,6 @@ import {
   Palette,
   Smartphone,
   WifiOff,
-  FlaskConical,
-  Sparkles,
   Share,
   Layers,
   AlertCircle,
@@ -41,7 +39,6 @@ export const SettingsView: React.FC = () => {
     handleClearAllData,
     refreshAll,
     setToast,
-    setIsSetupWizardOpen,
   } = useApp();
 
   const {
@@ -51,7 +48,6 @@ export const SettingsView: React.FC = () => {
     updateApp,
     checkForUpdates,
     setIsInstallModalOpen,
-    setIsDiagnosticsModalOpen,
     storageInfo,
   } = usePWA();
 
@@ -677,14 +673,6 @@ export const SettingsView: React.FC = () => {
             <Download className="w-4 h-4 text-red-400" />
             <span>Instalar Aplicativo (Android / iOS / PC)</span>
           </button>
-
-          <button
-            onClick={() => setIsDiagnosticsModalOpen(true)}
-            className="flex items-center justify-center gap-2.5 p-3.5 rounded-2xl bg-stone-950 hover:bg-stone-850 text-stone-200 font-bold text-xs border border-stone-800 transition-colors cursor-pointer"
-          >
-            <FlaskConical className="w-4 h-4 text-emerald-400" />
-            <span>Central de Testes PWA & Offline</span>
-          </button>
         </div>
 
         <div className="p-3.5 rounded-2xl bg-stone-950 border border-stone-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
@@ -710,40 +698,6 @@ export const SettingsView: React.FC = () => {
           >
             <RefreshCw className="w-3.5 h-3.5 text-amber-400" />
             <span>Verificar Atualizações</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Card: Assistente de Configuração Inicial */}
-      <div className="bg-stone-900 border border-stone-800 rounded-3xl p-5 sm:p-6 shadow-lg space-y-4">
-        <div className="flex items-center justify-between gap-3 pb-3 border-b border-stone-800">
-          <div className="flex items-center gap-2.5">
-            <Sparkles className="w-5 h-5 text-red-500" />
-            <div>
-              <h2 className="font-heading font-bold text-base text-white">
-                Assistente de Configuração Inicial
-              </h2>
-              <p className="text-xs text-stone-400">
-                Execute novamente o passo a passo de primeiro acesso para cadastrar seu negócio, produtos, estoque e primeira venda.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 p-4 rounded-2xl bg-stone-950 border border-stone-800">
-          <div className="space-y-0.5">
-            <p className="text-xs font-bold text-white">Passo a Passo de Boas-Vindas</p>
-            <p className="text-[11px] text-stone-400">
-              Personalize nome, logo, estoque inicial ou experimente com dados fictícios de demonstração.
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setIsSetupWizardOpen(true)}
-            className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs shadow-lg shadow-red-600/20 transition-all flex items-center justify-center gap-2 cursor-pointer flex-shrink-0"
-          >
-            <Sparkles className="w-4 h-4" />
-            <span>Abrir Assistente Inicial</span>
           </button>
         </div>
       </div>

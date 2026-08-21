@@ -22,7 +22,7 @@ export const acaiSorveteriaSegment: BusinessSegmentConfig = {
     productSingular: 'Copo / Sorvete',
     productPlural: 'Copos & Sorvetes',
     newProductLabel: 'Novo Copo / Sorvete',
-    inventoryLabel: 'Estoque de Polpas & Toppings',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Composição do Copo / Tigela',
     salesLabel: 'Vendas de Açaí & Sorvetes',
     customerLabel: 'Clientes',

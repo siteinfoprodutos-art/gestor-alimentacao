@@ -21,7 +21,7 @@ export const servicosSegment: BusinessSegmentConfig = {
     productSingular: 'Serviço / Peça',
     productPlural: 'Serviços & Materiais',
     newProductLabel: 'Novo Serviço / Material',
-    inventoryLabel: 'Estoque de Peças & Materiais',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Materiais / Peças por Serviço',
     salesLabel: 'Ordens de Serviço & Vendas',
     customerLabel: 'Clientes / Contratantes',

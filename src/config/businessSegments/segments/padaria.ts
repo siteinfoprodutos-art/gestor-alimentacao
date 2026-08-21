@@ -22,7 +22,7 @@ export const padariaSegment: BusinessSegmentConfig = {
     productSingular: 'Item de Padaria',
     productPlural: 'Itens & Fornadas',
     newProductLabel: 'Novo Item / Pão',
-    inventoryLabel: 'Estoque de Farinhas & Insumos',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Ficha da Receita / Batelada',
     salesLabel: 'Vendas de Balcão & Caixa',
     customerLabel: 'Clientes da Padaria',

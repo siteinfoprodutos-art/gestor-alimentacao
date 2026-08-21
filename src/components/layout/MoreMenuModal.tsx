@@ -5,10 +5,8 @@ import {
   Settings as SettingsIcon,
   Database,
   X,
-  Sparkles,
   Download,
-  FlaskConical,
-  Smartphone,
+  ShoppingBag,
   Sun,
   Moon,
 } from 'lucide-react';
@@ -22,12 +20,10 @@ export const MoreMenuModal: React.FC = () => {
     setIsMoreMenuOpen,
     activeTab,
     setActiveTab,
-    settings,
-    setIsSetupWizardOpen,
     theme,
     toggleTheme,
   } = useApp();
-  const { isInstalled, setIsInstallModalOpen, setIsDiagnosticsModalOpen } = usePWA();
+  const { isInstalled, setIsInstallModalOpen } = usePWA();
 
   if (!isMoreMenuOpen) return null;
 
@@ -36,22 +32,18 @@ export const MoreMenuModal: React.FC = () => {
     setIsMoreMenuOpen(false);
   };
 
-  const handleOpenSetupWizard = () => {
-    setIsMoreMenuOpen(false);
-    setIsSetupWizardOpen(true);
-  };
-
   const handleOpenInstall = () => {
     setIsMoreMenuOpen(false);
     setIsInstallModalOpen(true);
   };
 
-  const handleOpenDiagnostics = () => {
-    setIsMoreMenuOpen(false);
-    setIsDiagnosticsModalOpen(true);
-  };
-
   const moreItems: { id: ActiveTab; label: string; desc: string; icon: React.ComponentType<{ className?: string }> }[] = [
+    {
+      id: 'orders',
+      label: 'Pedidos & Vendas',
+      desc: 'Visualizar pedidos realizados e faturamento',
+      icon: ShoppingBag,
+    },
     {
       id: 'finances',
       label: 'Financeiro',
@@ -159,30 +151,6 @@ export const MoreMenuModal: React.FC = () => {
             </button>
           )}
 
-          <button
-            onClick={handleOpenDiagnostics}
-            className="w-full flex items-center justify-between p-2.5 rounded-2xl bg-stone-800/80 hover:bg-stone-800 border border-stone-700/60 text-stone-300 text-xs font-semibold transition-colors cursor-pointer"
-          >
-            <div className="flex items-center gap-2">
-              <FlaskConical className="w-4 h-4 text-emerald-400" />
-              <span>Central de Testes PWA & Offline</span>
-            </div>
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">
-              Testar
-            </span>
-          </button>
-          <button
-            onClick={handleOpenSetupWizard}
-            className="w-full flex items-center justify-between p-2.5 rounded-2xl bg-stone-800/80 hover:bg-stone-800 border border-stone-700/60 text-stone-300 text-xs font-semibold transition-colors cursor-pointer"
-          >
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-red-400" />
-              <span>Assistente de Configuração</span>
-            </div>
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 font-bold">
-              Primeiro Acesso
-            </span>
-          </button>
           <button
             onClick={toggleTheme}
             className="w-full flex items-center justify-between p-2.5 rounded-2xl bg-stone-800/80 hover:bg-stone-800 border border-stone-700/60 text-stone-300 text-xs font-semibold transition-colors cursor-pointer"

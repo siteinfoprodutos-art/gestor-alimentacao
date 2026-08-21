@@ -21,7 +21,7 @@ export const outroSegment: BusinessSegmentConfig = {
     productSingular: 'Item / Produto',
     productPlural: 'Itens & Produtos',
     newProductLabel: 'Novo Item / Produto',
-    inventoryLabel: 'Estoque Geral de Itens',
+    inventoryLabel: 'Estoque',
     recipeLabel: 'Composição de Custos / Ficha',
     salesLabel: 'Vendas & Atendimentos',
     customerLabel: 'Clientes',

@@ -10,9 +10,7 @@ import {
   Users,
   AlertTriangle,
   Download,
-  FlaskConical,
-  Smartphone,
-  Sparkles,
+  ShoppingBag,
   Sun,
   Moon,
 } from 'lucide-react';
@@ -29,8 +27,8 @@ interface NavItem {
 }
 
 export const Sidebar: React.FC = () => {
-  const { activeTab, setActiveTab, inventory, currentSegment, setIsSetupWizardOpen, theme, toggleTheme } = useApp();
-  const { isInstalled, setIsInstallModalOpen, setIsDiagnosticsModalOpen } = usePWA();
+  const { activeTab, setActiveTab, inventory, currentSegment, theme, toggleTheme } = useApp();
+  const { isInstalled, setIsInstallModalOpen } = usePWA();
 
   const lowStockCount = inventory.filter(
     (i) => i.currentQuantity <= i.minQuantity
@@ -41,6 +39,11 @@ export const Sidebar: React.FC = () => {
       id: 'dashboard',
       label: 'Dashboard',
       icon: LayoutDashboard,
+    },
+    {
+      id: 'orders',
+      label: 'Pedidos & Vendas',
+      icon: ShoppingBag,
     },
     {
       id: 'products',
@@ -164,28 +167,6 @@ export const Sidebar: React.FC = () => {
             <span>Instalar Aplicativo</span>
           </button>
         )}
-
-        <button
-          onClick={() => setIsDiagnosticsModalOpen(true)}
-          className="w-full py-1.5 px-3 bg-stone-800/60 hover:bg-stone-800 text-stone-300 hover:text-white rounded-xl border border-stone-700/60 text-[11px] font-semibold flex items-center justify-between transition-colors cursor-pointer"
-        >
-          <div className="flex items-center gap-1.5 text-emerald-400">
-            <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>Testes PWA & Offline</span>
-          </div>
-          <FlaskConical className="w-3.5 h-3.5 text-stone-400" />
-        </button>
-
-        <button
-          onClick={() => setIsSetupWizardOpen(true)}
-          className="w-full py-1.5 px-3 bg-stone-800/60 hover:bg-stone-800 text-stone-300 hover:text-red-400 rounded-xl border border-stone-700/60 text-[11px] font-semibold flex items-center justify-between transition-colors cursor-pointer"
-        >
-          <div className="flex items-center gap-1.5 text-red-400">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Assistente Inicial</span>
-          </div>
-          <span className="text-[10px] text-stone-500">Configurar</span>
-        </button>
 
         <button
           onClick={toggleTheme}
